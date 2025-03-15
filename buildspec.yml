@@ -15,7 +15,7 @@ phases:
       - echo building and tagging started on `date`
       - mvn clean install
       - docker build -t $REPOSITORY_URI:latest .
-      - echo tagging the image...
+      - echo tagging the image......
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
