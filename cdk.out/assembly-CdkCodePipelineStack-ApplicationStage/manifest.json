@@ -1,0 +1,864 @@
+{
+  "version": "39.0.0",
+  "artifacts": {
+    "CdkCodePipelineStackApplicationStageCdkVpcStackA8E2B8A8.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkCodePipelineStackApplicationStageCdkVpcStackA8E2B8A8.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkCodePipelineStackApplicationStageCdkVpcStackA8E2B8A8": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://206409480438/us-east-1",
+      "properties": {
+        "templateFile": "CdkCodePipelineStackApplicationStageCdkVpcStackA8E2B8A8.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::206409480438:role/cdk-hnb659fds-deploy-role-206409480438-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::206409480438:role/cdk-hnb659fds-cfn-exec-role-206409480438-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-206409480438-us-east-1/a29fff195488aa039398ae6da0b1c7b242f195efe08c00a41f6b37bd19eb30b9.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkCodePipelineStackApplicationStageCdkVpcStackA8E2B8A8.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::206409480438:role/cdk-hnb659fds-lookup-role-206409480438-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "ApplicationStage-CdkVpcStack"
+      },
+      "dependencies": [
+        "CdkCodePipelineStackApplicationStageCdkVpcStackA8E2B8A8.assets"
+      ],
+      "metadata": {
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "maxAzs": "*",
+              "natGateways": "*",
+              "subnetConfiguration": [
+                {
+                  "name": "*",
+                  "subnetType": "Public",
+                  "cidrMask": "*"
+                },
+                {
+                  "name": "*",
+                  "subnetType": "Private",
+                  "cidrMask": "*"
+                }
+              ]
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPC01512990"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet1": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": true,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": true,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {}
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addNatGateway": [
+                "*"
+              ]
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet1Subnet16DC0451"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet1RouteTable17E839DE"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet1RouteTableAssociationCE552C4D"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet1DefaultRouteAC795A4A"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet1EIPD1E39CB7"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet1NATGatewayAF86DD78"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet2": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": true,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": true,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {}
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet2Subnet26518C29"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet2RouteTableB0FC93F6"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet2RouteTableAssociation6C5C78A9"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PublicSubnetSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPublicSubnetSubnet2DefaultRoute5A0B1B81"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet1": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": false,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": false,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {}
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet1Subnet73687137"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet1RouteTable46ECBFC6"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet1RouteTableAssociation1CC024A6"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet1DefaultRoute1BC039B6"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet2": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": false,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "availabilityZone": "*",
+              "vpcId": "*",
+              "cidrBlock": "*",
+              "mapPublicIpOnLaunch": false,
+              "ipv6CidrBlock": "*",
+              "assignIpv6AddressOnCreation": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {}
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet2Subnet205EC7B7"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet2RouteTableD110DC7A"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet2RouteTableAssociationC96632F8"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/PrivateSubnetSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCPrivateSubnetSubnet2DefaultRouteB075CE25"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCIGW5063090B"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCVPCGW2EC4F0BF"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/RestrictDefaultSecurityGroupCustomResource": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/myVPC/RestrictDefaultSecurityGroupCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myVPCRestrictDefaultSecurityGroupCustomResourceF0D6E4AC"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Custom::VpcRestrictDefaultSGCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Exports/Output{\"Ref\":\"myVPC01512990\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefmyVPC0151299038646803"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Exports/Output{\"Ref\":\"myVPCPublicSubnetSubnet1Subnet16DC0451\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefmyVPCPublicSubnetSubnet1Subnet16DC04510512DA9B"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Exports/Output{\"Ref\":\"myVPCPublicSubnetSubnet2Subnet26518C29\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefmyVPCPublicSubnetSubnet2Subnet26518C29D679167B"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Exports/Output{\"Ref\":\"myVPCPrivateSubnetSubnet1Subnet73687137\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefmyVPCPrivateSubnetSubnet1Subnet73687137F7FEF86A"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/Exports/Output{\"Ref\":\"myVPCPrivateSubnetSubnet2Subnet205EC7B7\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefmyVPCPrivateSubnetSubnet2Subnet205EC7B7F1880CEF"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/CdkVpcStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkCodePipelineStack/ApplicationStage/CdkVpcStack"
+    },
+    "CdkCodePipelineStackApplicationStageEcsStack568E8E73.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkCodePipelineStackApplicationStageEcsStack568E8E73.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkCodePipelineStackApplicationStageEcsStack568E8E73": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://206409480438/us-east-1",
+      "properties": {
+        "templateFile": "CdkCodePipelineStackApplicationStageEcsStack568E8E73.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": true,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::206409480438:role/cdk-hnb659fds-deploy-role-206409480438-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::206409480438:role/cdk-hnb659fds-cfn-exec-role-206409480438-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-206409480438-us-east-1/355e03b8717d533a46d9951dff37d36035123082caf478917c866bfca4e40b24.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkCodePipelineStackApplicationStageEcsStack568E8E73.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::206409480438:role/cdk-hnb659fds-lookup-role-206409480438-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "ApplicationStage-EcsStack"
+      },
+      "dependencies": [
+        "CdkCodePipelineStackApplicationStageCdkVpcStackA8E2B8A8",
+        "CdkCodePipelineStackApplicationStageEcsStack568E8E73.assets"
+      ],
+      "metadata": {
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdCluster": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "clusterName": "*",
+              "vpc": "*"
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdClusterC9A4FE83"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/EcsTaskExecutionRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "assumedBy": {
+                "principalAccount": "*",
+                "assumeRoleAction": "*"
+              },
+              "managedPolicies": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToPrincipalPolicy": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/EcsTaskExecutionRole/ImportEcsTaskExecutionRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/EcsTaskExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcsTaskExecutionRoleC0B6A84D"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/EcsTaskExecutionRole/DefaultPolicy": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addStatements": [
+                {}
+              ]
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/EcsTaskExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcsTaskExecutionRoleDefaultPolicyDCEEFDC3"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdLogGroup": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "logGroupName": "*",
+              "removalPolicy": "destroy"
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdLogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdLogGroupC418AA0C"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdTaskDefinition": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdTaskDefinition/TaskRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "assumedBy": {
+                "principalAccount": "*",
+                "assumeRoleAction": "*"
+              }
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdTaskDefinition/TaskRole/ImportTaskRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdTaskDefinition/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdTaskDefinitionTaskRoleD37D3747"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdTaskDefinition/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdTaskDefinitionF97375F4"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdTaskDefinition/cicdContainer": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Proper policies need to be attached before pulling from ECR repository, or use 'fromEcrRepository'. [ack: @aws-cdk/aws-ecs:ecrImageRequiresPolicy]",
+            "trace": [
+              "Annotations.addMessage (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "RepositoryImage.bind (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/aws-ecs/lib/images/repository.js:1:1306)",
+              "new ContainerDefinition (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.js:1:3147)",
+              "FargateTaskDefinition.addContainer (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/aws-ecs/lib/base/task-definition.js:1:10910)",
+              "descriptor.value (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/core/lib/metadata-resource.js:1:2296)",
+              "/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:294:172",
+              "Kernel._Kernel_ensureSync (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:920:24)",
+              "Kernel.invoke (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:294:102)",
+              "KernelHost.processRequest (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:15471:36)",
+              "KernelHost.run (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:15431:22)",
+              "Immediate._onImmediate (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:15432:46)",
+              "process.processImmediate (node:internal/timers:491:21)"
+            ]
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdRepository": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "removalPolicy": "destroy",
+              "repositoryName": "*"
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdRepository/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdRepositoryF140DEA9"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/albSecurityGroup": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "vpc": "*",
+              "allowAllOutbound": true,
+              "securityGroupName": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addIngressRule": [
+                {
+                  "canInlineRule": true,
+                  "connections": "*",
+                  "uniqueId": "*"
+                },
+                {},
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addIngressRule": [
+                {
+                  "canInlineRule": true,
+                  "connections": "*",
+                  "uniqueId": "*"
+                },
+                {},
+                "*",
+                false
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addEgressRule": [
+                "*",
+                {},
+                "*",
+                true
+              ]
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/albSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "albSecurityGroup624E032B"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdALB": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdALB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdALB1BF97252"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdALB/cicdListener": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdALB/cicdListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdALBcicdListenerC83D6466"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdALB/cicdListener/cicddemoTargetGroupGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdALBcicdListenercicddemoTargetGroupGroup048C3A6D"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/ecsSecurityGroup": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "vpc": "*",
+              "allowAllOutbound": true
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addIngressRule": [
+                "*",
+                {},
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addIngressRule": [
+                "*",
+                {},
+                "*",
+                false
+              ]
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/ecsSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ecsSecurityGroupA27532EA"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/ecsSecurityGroup/from CdkCodePipelineStackApplicationStageEcsStackalbSecurityGroup941CDD1B:8080": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ecsSecurityGroupfromCdkCodePipelineStackApplicationStageEcsStackalbSecurityGroup941CDD1B80804A0C6C34"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdService": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "minHealthyPercent has not been configured so the default value of 50% is used. The number of running tasks will decrease below the desired count during deployments etc. See https://github.com/aws/aws-cdk/issues/31705 [ack: @aws-cdk/aws-ecs:minHealthyPercent]",
+            "trace": [
+              "Annotations.addMessage (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "new BaseService (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/aws-ecs/lib/base/base-service.js:1:8100)",
+              "new FargateService (/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-kernel-SK97ZE/node_modules/aws-cdk-lib/aws-ecs/lib/fargate/fargate-service.js:1:3551)",
+              "Kernel._Kernel_create (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:548:25)",
+              "Kernel.create (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:218:93)",
+              "KernelHost.processRequest (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:15471:36)",
+              "KernelHost.run (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:15431:22)",
+              "Immediate._onImmediate (/private/var/folders/vb/8_pp1vwd4ngfzyp_b3h948f40000gn/T/jsii-java-runtime13395981565197893269/lib/program.js:15432:46)",
+              "process.processImmediate (node:internal/timers:491:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdService/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdService1630270E"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdService/ScalingRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdService/TaskCount/Target": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "serviceNamespace": "ecs",
+              "scalableDimension": "*",
+              "resourceId": "*",
+              "role": "*",
+              "minCapacity": "*",
+              "maxCapacity": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "scaleToTrackMetric": [
+                "*",
+                {
+                  "predefinedMetric": "*",
+                  "policyName": "*",
+                  "disableScaleIn": "*",
+                  "targetValue": "*",
+                  "scaleInCooldown": "*"
+                }
+              ]
+            }
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdService/TaskCount/Target/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdServiceTaskCountTargetA11A5562"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/cicdService/TaskCount/Target/CpuScaling/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cicdServiceTaskCountTargetCpuScaling67D29028"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkCodePipelineStack/ApplicationStage/EcsStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkCodePipelineStack/ApplicationStage/EcsStack"
+    }
+  }
+}
