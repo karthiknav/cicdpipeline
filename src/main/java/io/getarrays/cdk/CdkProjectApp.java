@@ -16,7 +16,9 @@ public class CdkProjectApp {
         StackProps props = StackProps.builder()
                 .env(env)
                 .build();
-        new CdkCodePipelineStack(app, "CdkCodePipelineStack", props);
+        CdkVpcStack cdkVpcStack = new CdkVpcStack(app, "CdkVpcStack", props);
+        CdkEcsStack ecsStack = new CdkEcsStack(app, "CdkEcsStack", props, cdkVpcStack.getVpc());
+        new CdkCodePipelineStack(app, "CdkCodePipelineStack", props, ecsStack.getService());
         app.synth();
     }
 }
