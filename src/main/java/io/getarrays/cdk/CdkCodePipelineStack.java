@@ -43,75 +43,6 @@ public class CdkCodePipelineStack extends Stack {
                 .build()
         );
 
-        /*Pipeline pipeline = Pipeline.Builder.create(this, "CiCDDemoPipeline")
-            .restartExecutionOnUpdate(true)
-            .build();
-
-        StageOptions sourceStage = StageOptions.builder()
-            .stageName("Source")
-            .actions(List.of(
-                CodeStarConnectionsSourceAction.Builder.create()
-                    .actionName("Checkout")
-                    .branch("main")
-                    .connectionArn("arn:aws:codeconnections:us-east-1:206409480438:connection/c12ba6ca-3d36-4ae9-8a2e-51fa31e27866")
-                    .output(sourceArtifact)
-                    .owner("karthiknav")
-                    .repo("cicdpipeline")
-                    .build()
-            ))
-            .build();
-
-        pipeline.addStage(sourceStage);
-
-        Role codeBuildRole = Role.Builder.create(this, "CodeBuildRole")
-            .assumedBy(new ServicePrincipal("codebuild.amazonaws.com"))
-            .managedPolicies(List.of(
-                ManagedPolicy.fromAwsManagedPolicyName("AmazonEC2ContainerRegistryPowerUser")
-            ))
-            .build();
-
-        PipelineProject project = PipelineProject.Builder.create(this, "Project")
-            .role(codeBuildRole)
-            .environment(BuildEnvironment.builder()
-                .buildImage(LinuxBuildImage.AMAZON_LINUX_2_4)
-                .privileged(true)
-                .environmentVariables(Map.of(
-                    "ECR_REGISTRY", BuildEnvironmentVariable.builder().value("206409480438.dkr.ecr.us-east-1.amazonaws.com").build(),
-                    "ECR_REPOSITORY", BuildEnvironmentVariable.builder().value("cicdpipeline").build(),
-                    "AWS_REGION", BuildEnvironmentVariable.builder().value(this.getRegion()).build()
-                ))
-                .build())
-            .buildSpec(BuildSpec.fromSourceFilename("buildspec.yml"))
-            .projectName("cicddemoBuildProject")
-            .build();
-
-         CodeBuildAction buildAction = CodeBuildAction.Builder.create()
-            .actionName("Build-Action")
-            .project(project)
-            .input(sourceArtifact)
-            .outputs(List.of(buildArtifact))
-            .build();
-
-        StageOptions buildStage = StageOptions.builder()
-            .stageName("BuildApp")
-            .actions(List.of(buildAction))
-            .build();
-
-
-
-        EcsDeployAction deployAction = EcsDeployAction.Builder.create()
-            .actionName("Deploy")
-            .service(ecsService)
-            .input(buildArtifact)
-            .build();
-
-        StageOptions deployStage = StageOptions.builder()
-            .stageName("DeployApp")
-            .actions(List.of(deployAction))
-            .build();*/
-
-
-
        CodePipeline codePipeline = CodePipeline.Builder.create(this,  "synth-pipeline-id")
            .pipelineName("cicddemoPipeline")
             .synth(ShellStep.Builder.create("Synth")
@@ -127,11 +58,17 @@ public class CdkCodePipelineStack extends Stack {
             ))
             .build();
 
-        codePipeline.buildPipeline();
-        Pipeline pipeline = codePipeline.getPipeline();
+        codePipeline.buildPipeline(); // create the pipeline
+        Pipeline pipeline = codePipeline.getPipeline(); // get the abstract pipeline to add some stages to it
 
-        Artifact artifact =
-            pipeline.getStages().get(0).getActions().get(0).getActionProperties().getOutputs().get(0);
+        Artifact artifact = null;
+        if (!pipeline.getStages().isEmpty()) {
+            if (!pipeline.getStages().get(0).getActions().isEmpty() &&
+                pipeline.getStages().get(0).getActions().get(0).getActionProperties() != null &&
+                pipeline.getStages().get(0).getActions().get(0).getActionProperties().getOutputs() != null && !pipeline.getStages().get(0).getActions().get(0).getActionProperties().getOutputs().isEmpty()) {
+                artifact = pipeline.getStages().get(0).getActions().get(0).getActionProperties().getOutputs().get(0);
+            }
+        }
 
         PipelineProject project = PipelineProject.Builder.create(this, "Project")
             .role(codeBuildRole)
