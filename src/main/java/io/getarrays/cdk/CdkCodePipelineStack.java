@@ -13,6 +13,9 @@ import software.amazon.awscdk.services.codebuild.BuildSpec;
 import software.amazon.awscdk.services.codebuild.LinuxBuildImage;
 import software.amazon.awscdk.services.codebuild.PipelineProject;
 import software.amazon.awscdk.services.codepipeline.Artifact;
+import software.amazon.awscdk.services.codepipeline.Pipeline;
+import software.amazon.awscdk.services.codepipeline.StageOptions;
+import software.amazon.awscdk.services.codepipeline.actions.CodeBuildAction;
 import software.amazon.awscdk.services.iam.ManagedPolicy;
 import software.amazon.awscdk.services.iam.Role;
 import software.amazon.awscdk.services.iam.ServicePrincipal;
@@ -121,6 +124,11 @@ public class CdkCodePipelineStack extends Stack {
             ))
             .build();
 
+        Pipeline pipeline = codePipeline.getPipeline();
+
+        Artifact artifact =
+            pipeline.getStages().get(0).getActions().get(0).getActionProperties().getOutputs().get(0);
+
         PipelineProject project = PipelineProject.Builder.create(this, "Project")
             .role(codeBuildRole)
             .environment(BuildEnvironment.builder()
@@ -136,16 +144,17 @@ public class CdkCodePipelineStack extends Stack {
             .projectName("cicddemoBuildProject")
             .build();
 
-
-        codePipeline.addStage(new ApplicationStage(this, "ApplicationStage",
-            StageProps.builder()
-                .env(props.getEnv())
-            .build()));
-        /*pipeline.addStage(StageOptions.builder()
+        CodeBuildAction buildAction = CodeBuildAction.Builder.create()
+            .actionName("Build-Action")
+            .project(project)
+            .input(artifact)
+            .outputs(List.of(buildArtifact))
+            .build();
+        pipeline.addStage(StageOptions.builder()
             .stageName("BuildApp")
             .actions(List.of(buildAction))
             .build());
-        pipeline.addStage(deployStage);*/
+        //pipeline.addStage(deployStage);
 
 
     }
