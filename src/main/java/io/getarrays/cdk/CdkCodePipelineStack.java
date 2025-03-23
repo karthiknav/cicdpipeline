@@ -16,6 +16,8 @@ import software.amazon.awscdk.services.codepipeline.Artifact;
 import software.amazon.awscdk.services.codepipeline.Pipeline;
 import software.amazon.awscdk.services.codepipeline.StageOptions;
 import software.amazon.awscdk.services.codepipeline.actions.CodeBuildAction;
+import software.amazon.awscdk.services.codepipeline.actions.EcsDeployAction;
+import software.amazon.awscdk.services.ecs.FargateService;
 import software.amazon.awscdk.services.iam.ManagedPolicy;
 import software.amazon.awscdk.services.iam.Role;
 import software.amazon.awscdk.services.iam.ServicePrincipal;
@@ -25,7 +27,8 @@ import java.util.List;
 import java.util.Map;
 
 public class CdkCodePipelineStack extends Stack {
-    public CdkCodePipelineStack(final Construct scope, final String id, final StackProps props) {
+    public CdkCodePipelineStack(final Construct scope, final String id, final StackProps props,
+                                final FargateService ecsService) {
 
         super(scope, id, props);
 
@@ -155,7 +158,18 @@ public class CdkCodePipelineStack extends Stack {
             .stageName("BuildApp")
             .actions(List.of(buildAction))
             .build());
-        //pipeline.addStage(deployStage);
+
+        EcsDeployAction deployAction = EcsDeployAction.Builder.create()
+            .actionName("Deploy")
+            .service(ecsService)
+            .input(buildArtifact)
+            .build();
+
+        StageOptions deployStage = StageOptions.builder()
+            .stageName("DeployApp")
+            .actions(List.of(deployAction))
+            .build();
+        pipeline.addStage(deployStage);
 
 
     }
