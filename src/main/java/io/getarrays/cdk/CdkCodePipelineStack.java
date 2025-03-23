@@ -124,6 +124,7 @@ public class CdkCodePipelineStack extends Stack {
             ))
             .build();
 
+        codePipeline.buildPipeline();
         Pipeline pipeline = codePipeline.getPipeline();
 
         Artifact artifact =
