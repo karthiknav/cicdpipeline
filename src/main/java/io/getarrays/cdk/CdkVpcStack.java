@@ -1,5 +1,6 @@
 package io.getarrays.cdk;
 
+import software.amazon.awscdk.RemovalPolicy;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
 import software.amazon.awscdk.services.ec2.SubnetConfiguration;
@@ -27,6 +28,8 @@ public class CdkVpcStack extends Stack {
                     .subnetType(SubnetType.PRIVATE_WITH_EGRESS)
                     .build()))
             .build();
+
+        this.vpc.applyRemovalPolicy(RemovalPolicy.DESTROY);
     }
 
     public Vpc getVpc() {
