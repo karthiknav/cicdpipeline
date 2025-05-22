@@ -2,7 +2,6 @@ package io.getarrays.cdk;
 
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
-import software.amazon.awscdk.StageProps;
 import software.amazon.awscdk.pipelines.CodePipeline;
 import software.amazon.awscdk.pipelines.CodePipelineSource;
 import software.amazon.awscdk.pipelines.ConnectionSourceOptions;
@@ -54,7 +53,8 @@ public class CdkCodePipelineStack extends Stack {
         Role codeBuildRole = Role.Builder.create(this, "CodeBuildRole")
             .assumedBy(new ServicePrincipal("codebuild.amazonaws.com"))
             .managedPolicies(List.of(
-                ManagedPolicy.fromAwsManagedPolicyName("AmazonEC2ContainerRegistryPowerUser")
+                ManagedPolicy.fromAwsManagedPolicyName("AmazonEC2ContainerRegistryPowerUser"),
+                ManagedPolicy.fromAwsManagedPolicyName("AmazonElasticContainerRegistryPublicPowerUser")
             ))
             .build();
 
