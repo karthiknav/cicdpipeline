@@ -1,18 +1,44 @@
-# Welcome to your CDK Java project!
+# CDK Development Project with Java
 
 This is a blank project for CDK development with Java.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Overview
+The `cdk.json` file tells the CDK Toolkit how to execute your app. This project is [Maven](https://maven.apache.org/)-based, allowing you to open it with any Maven-compatible Java IDE to build and run tests.
 
-It is a [Maven](https://maven.apache.org/) based project, so you can open this project with any Maven compatible Java IDE to build and run tests.
+## Prerequisites
+- AWS CLI configured
+- Maven installed
+- Java Development Kit (JDK)
+- AWS CDK CLI installed
 
-## Useful commands
+## Useful Commands
 
- * `mvn package`     compile and run tests
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
+| Command | Description |
+|---------|-------------|
+| `mvn package` | Compile and run tests |
+| `cdk ls` | List all stacks in the app |
+| `cdk synth` | Emit the synthesized CloudFormation template |
+| `cdk deploy` | Deploy this stack to your default AWS account/region |
+| `cdk diff` | Compare deployed stack with current state |
+| `cdk docs` | Open CDK documentation |
 
-Enjoy!
+## Setting up GitHub Connection
+
+1. Navigate to AWS CodePipeline console
+2. Go to Settings in the left navigation pane
+3. Select Connections
+4. Click "Create connection"
+5. Choose GitHub as your provider
+6. Follow the prompts to complete the connection setup
+
+## Development
+
+[Add your development instructions here]
+
+## Contributing
+
+[Add your contribution guidelines here]
+
+## License
+
+[Add your license information here]
